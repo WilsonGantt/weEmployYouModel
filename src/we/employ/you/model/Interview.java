@@ -4,20 +4,11 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
-import org.hibernate.annotations.Type;
+import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import we.employ.you.converter.YesNoConverter;
 
 /**
  * This class represents the INTERVIEW table in the database.
@@ -57,11 +48,11 @@ public class Interview implements Serializable {
     private String formattedInterviewDate = "N/A";
 
 	@Column(name = "applicant_attend_ind", nullable = true)
-    @Type(type="yes_no")
+	@Convert(converter = YesNoConverter.class)
     private boolean attendInterviewIndicator;
 
 	@Column(name = "successful_hire_ind", nullable = true)
-    @Type(type="yes_no")
+	@Convert(converter = YesNoConverter.class)
     private boolean successfulHireIndicator;
 
     /**

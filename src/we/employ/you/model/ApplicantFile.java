@@ -1,25 +1,18 @@
 package we.employ.you.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.Type;
+import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import we.employ.you.converter.YesNoConverter;
 
 @Entity
 @Table(name = "applicant_file", schema = "we_employ_you")
 public class ApplicantFile implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 708177716521542409L;
 
 	@Id
@@ -41,7 +34,7 @@ public class ApplicantFile implements Serializable {
 	private byte[] file;
 
 	@Column(name = "resume_indicator")
-    @Type(type = "yes_no")
+	@Convert(converter = YesNoConverter.class)
 	private boolean resumeIndicator;
 
 	public ApplicantFile() {

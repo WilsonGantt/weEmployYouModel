@@ -4,18 +4,11 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
-import org.hibernate.annotations.Type;
+import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import we.employ.you.converter.YesNoConverter;
 import we.employ.you.util.LogUtil;
 import we.employ.you.util.PasswordUtil;
 
@@ -43,11 +36,11 @@ public class UserPassword implements Serializable {
     private String password;
 	
 	@Column(name = "current_pwd_ind")
-    @Type(type = "yes_no")	
+    @Convert(converter = YesNoConverter.class)
     private boolean currentPasswordIndicator;
     
 	@Column(name = "temp_ind", nullable = true)
-    @Type(type = "yes_no")
+    @Convert(converter = YesNoConverter.class)
     private boolean temporaryPasswordIndicator;
 	
 	@Column(name = "temp_pwd_expiry_date")
