@@ -1,5 +1,6 @@
 package we.employ.you.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
@@ -11,6 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "company_interviews", schema = "we_employ_you")
 public class CompanyInterviews implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = -5013117996639133627L;
 
 	@Id

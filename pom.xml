@@ -43,11 +43,11 @@
 		    <artifactId>jackson-datatype-jsr310</artifactId>
 		    <version>2.16.0</version>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.hibernate.common</groupId>-->
-<!--			<artifactId>hibernate-commons-annotations</artifactId>-->
-<!--			<version>6.0.6.Final</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.6.44.Final</version>  <!-- or latest 6.6.x - confirm on mvnrepository.com -->
+		</dependency>
 
 	</dependencies>
 	<build>

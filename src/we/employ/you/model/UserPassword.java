@@ -1,5 +1,6 @@
 package we.employ.you.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -8,7 +9,7 @@ import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import we.employ.you.converter.YesNoConverter;
+import org.hibernate.type.YesNoConverter;
 import we.employ.you.util.LogUtil;
 import we.employ.you.util.PasswordUtil;
 
@@ -16,7 +17,8 @@ import we.employ.you.util.PasswordUtil;
 @Table(name = "user_password", schema = "we_employ_you")
 public class UserPassword implements Serializable {
     
-	private static final long serialVersionUID = -192663536685988492L;
+	@Serial
+    private static final long serialVersionUID = -192663536685988492L;
 
 	@Id
 	@Column(name = "user_id")

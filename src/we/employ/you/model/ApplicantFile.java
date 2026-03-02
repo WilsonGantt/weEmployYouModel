@@ -6,7 +6,7 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import we.employ.you.converter.YesNoConverter;
+import org.hibernate.type.YesNoConverter;
 
 @Entity
 @Table(name = "applicant_file", schema = "we_employ_you")

@@ -2,6 +2,7 @@ package we.employ.you.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
@@ -15,7 +16,8 @@ import jakarta.persistence.Table;
 @Table(name = "user_role", schema = "we_employ_you")
 public class UserRole implements Serializable {
     
-	private static final long serialVersionUID = 4137213562880030249L;
+	@Serial
+    private static final long serialVersionUID = 4137213562880030249L;
 	
 	@Id
 	@OneToOne

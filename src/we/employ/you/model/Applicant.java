@@ -1,6 +1,8 @@
 package we.employ.you.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import org.hibernate.type.YesNoConverter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -8,8 +10,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import jakarta.persistence.*;
-import we.employ.you.converter.YesNoConverter;
 
 @Entity
 @Table(name = "applicant", schema = "we_employ_you")

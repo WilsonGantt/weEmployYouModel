@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import we.employ.you.converter.YesNoConverter;
+import org.hibernate.type.YesNoConverter;
 
 /**
  * This class represents the INTERVIEW table in the database.
