@@ -37,7 +37,7 @@ public class UserPassword implements Serializable {
 	@Column(name = "password")
     private String password;
 	
-	@Column(name = "current_pwd_ind")
+	@Column(name = "current_pwd_ind",length = 1)
     @Convert(converter = YesNoConverter.class)
     private boolean currentPasswordIndicator;
     
